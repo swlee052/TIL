@@ -6,12 +6,15 @@
 5) Client saves JWT either on local storage or cookie
 6) JWT is sent with the HTTP header with key "authorization" and value "Bearer JWT"
 
+
 ### Structure
 ![image](https://user-images.githubusercontent.com/44560576/182671240-4ff1f104-f0db-4767-b664-e9048d00517a.png)
+
 
 ### How it guarantees integerity
 1) If someone modifies the payload, the hash value of header + payload won't match with the original hash (3rd portion)
 2) Only the server has the key used for hashing with HMACSHA256, so fake hashes cannot be generated.
+
 
 ### Note that
 1) Header and payload are merely base64 encoded and are open information. Must not include sensitive info
